@@ -1,0 +1,38 @@
+#!/bin/bash
+#
+# A simple watch and restart llama-swap when its configuration
+# file changes. Useful for trying out configuration changes
+# without manually restarting the server each time.
+
+if [ -z "$ROOT" ]; then
+    echo "ROOT must be set"
+    exit 1
+fi
+
+export MODELS=$ROOT/models
+
+if [ -z "$1" ]; then
+    echo "Usage: $0 <path to config.yaml>"
+    exit 1
+fi
+
+while true; do
+    # Start the process again
+    $ROOT/llama-swap/build/llama-swap-linux-amd64 -config $1 -listen :8080 &
+    PID=$!
+    echo "Started llama-swap with PID $PID"
+
+    # Wait for modifications in the specified directory or file
+    inotifywait -e close_write "$ROOT/gen_config"
+    $ROOT/gen_config
+
+    # Check if process exists before sending signal
+    if kill -0 $PID 2>/dev/null; then
+        echo "Sending SIGTERM to $PID"
+        kill -SIGTERM $PID
+        wait $PID
+    else
+        echo "Process $PID no longer exists"
+    fi
+    sleep 1
+done

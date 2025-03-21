@@ -1,0 +1,14 @@
+[Unit]
+Description=llama-swap
+After=network.target
+
+[Service]
+ExecStart=/home/aicore/llms/scripts/llama-swap-start /home/aicore/llms/llama-swap.yml
+Environment="ROOT=/home/aicore/llms"
+Restart=on-failure
+RestartSec=3
+StartLimitBurst=3
+StartLimitInterval=30
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,49 @@
+#!/bin/bash
+git submodule update --init
+
+sudo chmod -R 777 llama-swap llama.cpp models
+
+sudo cat > llama-swap.service <<EOF
+[Unit]
+Description=llama-swap
+After=network.target
+
+[Service]
+ExecStart=${PWD}/scripts/llama-swap-start /home/aicore/llms/llama-swap.yml
+Environment="ROOT=${PWD}"
+Restart=on-failure
+RestartSec=3
+StartLimitBurst=3
+StartLimitInterval=30
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+# huggingface models installation
+while IFS= read -r line; do
+  IFS=' ' read -r repo pattern <<< "$line"
+  (huggingface-cli download $repo --include $pattern --local-dir=$PWD/models --cache-dir=$PWD/models/.cache) &
+done < $PWD/models.list
+
+# llama.cpp installation
+(
+  cd llama.cpp && \
+  cmake -B build -DGGML_CUDA=ON -DGGML_CUDA_F16=ON -DGGML_CUDA_FA_ALL_QUANTS=ON && \
+  cmake --build build --config Release --parallel $(nproc)
+) &
+
+# llama-swap installation
+(
+  cd llama-swap && \
+  make clean all -j$(nproc)
+) &
+
+wait
+
+sudo ln -s $PWD/llama-swap.service /etc/systemd/system/llama-swap.service
+sudo systemctl daemon-reload
+sudo systemctl enable llama-swap
+sudo systemctl start llama-swap
+
+echo "Installation complete. Run \"sudo systemctl status llama-swap\" to check if it is running"

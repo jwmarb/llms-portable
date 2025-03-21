@@ -1,0 +1,10 @@
+#!/bin/bash
+
+REPO=$1
+MODEL=$2
+
+huggingface-cli download $REPO --local-dir ~/llms/models --cache-dir ~/llms/models/.cache --include $MODEL
+
+if [[ "$?" = "0" ]]; then
+  echo "${1} ${2}" >> ~/llms/models.list
+fi

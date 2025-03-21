@@ -1,0 +1,44 @@
+services:
+  openai-edge-tts:
+    image: travisvn/openai-edge-tts:latest
+    container_name: openai-edge-tts
+    ports:
+      - 5050:5050
+    environment:
+      - REQUIRE_API_KEY=False
+  speaches:
+    container_name: speaches
+    ports:
+      - 8000:8000
+    restart: always
+    image: ghcr.io/speaches-ai/speaches:latest-cuda
+    build:
+      args:
+        BASE_IMAGE: nvidia/cuda:12.6.3-cudnn-runtime-ubuntu24.04
+    volumes:
+      - ./models/.cache:/home/ubuntu/.cache
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: ["gpu"]
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://0.0.0.0:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+  tika:
+    container_name: tika
+    image: apache/tika:latest-full
+    ports:
+      - 9998:9998
+    restart: always
+  searxng:
+    container_name: searxng
+    image: searxng/searxng:latest
+    ports:
+      - 8889:8080
+    volumes:
+      - ./data/searxng:/etc/searxng:rw
+    restart: always

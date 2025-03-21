@@ -1,0 +1,227 @@
+models:
+  granite-3.2-8b:
+    proxy: http://localhost:8375
+    cmd: >
+      /home/aicore/llms/llama.cpp/build/bin/llama-server
+      --port 8375
+      --flash-attn
+      --cache-type-k q8_0
+      --cache-type-v q8_0
+      -ngl 99
+      --model /home/aicore/llms/models/ibm-granite_granite-3.2-8b-instruct-Q4_K_M.gguf
+      --ctx-size 32768
+      -ngld 99
+      --draft-max 12
+      --draft-min 1
+      --draft-p-min 0.6
+      -md /home/aicore/llms/models/ibm-granite_granite-3.2-2b-instruct-Q8_0.gguf
+  phi-4:
+    proxy: http://localhost:8375
+    cmd: >
+      /home/aicore/llms/llama.cpp/build/bin/llama-server
+      --port 8375
+      --flash-attn
+      --cache-type-k q8_0
+      --cache-type-v q8_0
+      -ngl 99
+      --model /home/aicore/llms/models/phi-4-IQ4_XS.gguf
+      --ctx-size 16384
+  olympiccoder-32b:
+    proxy: http://localhost:8375
+    cmd: >
+      /home/aicore/llms/llama.cpp/build/bin/llama-server
+      --port 8375
+      --flash-attn
+      --cache-type-k q8_0
+      --cache-type-v q8_0
+      -ngl 99
+      --model /home/aicore/llms/models/open-r1_OlympicCoder-32B-IQ3_XXS.gguf
+      --temp 0.7
+      --top-k 50
+      --top-p 0.95
+      -ngld 99
+      --draft-max 12
+      --draft-min 1
+      --draft-p-min 0.6
+      -md /home/aicore/llms/models/Qwen2.5-Coder-0.5B-Instruct-Q8_0.gguf
+      --ctx-size 32768
+  llama3.2-reasoning-1b:
+    proxy: http://localhost:8375
+    cmd: >
+      /home/aicore/llms/llama.cpp/build/bin/llama-server
+      --port 8375
+      --flash-attn
+      --cache-type-k q8_0
+      --cache-type-v q8_0
+      -ngl 99
+      --model /home/aicore/llms/models/Reasoning-Llama-1b-v0.1-Q8_0.gguf
+      --ctx-size 8192
+      --temp 0.7
+      --top-k 50
+      --top-p 0.95
+  llama3.1-nemotron-nano-8b:
+    proxy: http://localhost:8375
+    cmd: >
+      /home/aicore/llms/llama.cpp/build/bin/llama-server
+      --port 8375
+      --flash-attn
+      --cache-type-k q8_0
+      --cache-type-v q8_0
+      -ngl 99
+      --model /home/aicore/llms/models/Llama-3.1-Nemotron-Nano-8B-v1-Q4_K_M.gguf
+      -ngld 99
+      --draft-max 12
+      --draft-min 1
+      --draft-p-min 0.6
+      -md /home/aicore/llms/models/Reasoning-Llama-1b-v0.1-Q8_0.gguf
+      --ctx-size 131072
+      --temp 0.7
+      --top-k 50
+      --top-p 0.95
+  llama3.2-3b:
+    proxy: http://localhost:8375
+    cmd: >
+      /home/aicore/llms/llama.cpp/build/bin/llama-server
+      --port 8375
+      --flash-attn
+      --cache-type-k q8_0
+      --cache-type-v q8_0
+      -ngl 99
+      --model /home/aicore/llms/models/Llama-3.2-3B-Instruct-Q8_0.gguf
+      -ngld 99
+      --draft-max 12
+      --draft-min 1
+      --draft-p-min 0.6
+      -md /home/aicore/llms/models/Llama-3.2-1B-Instruct-Q8_0.gguf
+      --ctx-size 131072
+  llama3.2-1b:
+    proxy: http://localhost:8375
+    cmd: >
+      /home/aicore/llms/llama.cpp/build/bin/llama-server
+      --port 8375
+      --flash-attn
+      --cache-type-k q8_0
+      --cache-type-v q8_0
+      -ngl 99
+      --model /home/aicore/llms/models/Llama-3.2-1B-Instruct-Q8_0.gguf
+      --ctx-size 131072
+  mistral-small-24b:
+    proxy: http://localhost:8375
+    cmd: >
+      /home/aicore/llms/llama.cpp/build/bin/llama-server
+      --port 8375
+      --flash-attn
+      --cache-type-k q8_0
+      --cache-type-v q8_0
+      -ngl 99
+      --model /home/aicore/llms/models/Mistral-Small-24B-Instruct-2501-IQ4_XS.gguf
+      --ctx-size 32768
+  gemma3-27b:
+    proxy: http://localhost:8375
+    cmd: >
+      /home/aicore/llms/llama.cpp/build/bin/llama-server
+      --port 8375
+      --flash-attn
+      --cache-type-k q8_0
+      --cache-type-v q8_0
+      -ngl 99
+      --model /home/aicore/llms/models/google_gemma-3-27b-it-IQ4_XS.gguf
+      -ngld 99
+      --draft-max 12
+      --draft-min 1
+      --draft-p-min 0.6
+      -md /home/aicore/llms/models/google_gemma-3-1b-it-Q8_0.gguf
+      --ctx-size 8192
+  gemma3-12b:
+    proxy: http://localhost:8375
+    cmd: >
+      /home/aicore/llms/llama.cpp/build/bin/llama-server
+      --port 8375
+      --flash-attn
+      --cache-type-k q8_0
+      --cache-type-v q8_0
+      -ngl 99
+      --model /home/aicore/llms/models/google_gemma-3-12b-it-Q4_K_M.gguf
+      -ngld 99
+      --draft-max 12
+      --draft-min 1
+      --draft-p-min 0.6
+      -md /home/aicore/llms/models/google_gemma-3-1b-it-Q8_0.gguf
+      --ctx-size 32768
+  gemma3-4b:
+    proxy: http://localhost:8375
+    cmd: >
+      /home/aicore/llms/llama.cpp/build/bin/llama-server
+      --port 8375
+      --flash-attn
+      --cache-type-k q8_0
+      --cache-type-v q8_0
+      -ngl 99
+      --model /home/aicore/llms/models/google_gemma-3-4b-it-Q8_0.gguf
+      --ctx-size 131072
+  gemma3-1b:
+    proxy: http://localhost:8375
+    cmd: >
+      /home/aicore/llms/llama.cpp/build/bin/llama-server
+      --port 8375
+      --flash-attn
+      --cache-type-k q8_0
+      --cache-type-v q8_0
+      -ngl 99
+      --model /home/aicore/llms/models/google_gemma-3-1b-it-Q8_0.gguf
+      --ctx-size 32768
+  qwen2.5-coder-7b:
+    proxy: http://localhost:8371
+    cmd: >
+      /home/aicore/llms/llama.cpp/build/bin/llama-server
+      --port 8371
+      --model /home/aicore/llms/models/Qwen2.5.1-Coder-7B-Instruct-Q4_K_M.gguf
+      -md /home/aicore/llms/models/Qwen2.5-Coder-0.5B-Instruct-Q8_0.gguf
+      --flash-attn
+      --cache-type-k q8_0
+      --cache-type-v q8_0
+      -ngl 99
+      -ngld 99
+      --draft-max 20
+      --draft-min 1
+      --draft-p-min 0.6
+      --ctx-size 16384
+      --parallel 2
+  gte-qwen2-1.5b-instruct:
+    proxy: http://localhost:8372
+    cmd: >
+      /home/aicore/llms/llama.cpp/build/bin/llama-server
+      --port 8372
+      --model /home/aicore/llms/models/gte-Qwen2-1.5B-instruct.Q8_0.gguf
+      -ngl 99
+      --embedding
+      --ctx-size 8192
+      --pooling cls
+      --ubatch-size 1536
+      --batch-size 1536
+  readerlm-v2:
+    proxy: http://localhost:8373
+    cmd: >
+      /home/aicore/llms/llama.cpp/build/bin/llama-server
+      --port 8373
+      --model /home/aicore/llms/models/readerlm-v2-q8_0.gguf
+      -ngl 99
+      --flash-attn
+      --cache-type-k q8_0
+      --cache-type-v q8_0
+      --ctx-size 256000
+  bge-reranker-v2-m3:
+    proxy: http://localhost:8374
+    cmd: >
+      /home/aicore/llms/llama.cpp/build/bin/llama-server
+      --port 8374
+      --model /home/aicore/llms/models/bge-reranker-v2-m3-q8_0.gguf
+      --rerank
+      --ctx-size 8194
+      -ngl 99
+profiles:
+  coding:
+    - "qwen2.5-coder-7b"
+    - "gte-qwen2-1.5b-instruct"
+    - "readerlm-v2"
+    - "bge-reranker-v2-m3"
