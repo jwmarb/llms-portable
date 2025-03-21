@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# llama.cpp
+(
+  cd llama.cpp && \
+  git reset --hard && \
+  cmake -B build -DGGML_CUDA=ON -DGGML_CUDA_F16=ON -DGGML_CUDA_FA_ALL_QUANTS=ON && \
+  cmake --build build --config Release --parallel $(nproc)
+) &
+
+# llama-swap
+(
+  cd llama-swap && \
+  git reset --hard && \
+  make clean all -j$(nproc)
+) &
+
+wait
