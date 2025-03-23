@@ -1,6 +1,6 @@
 models:
   exaone-deep-32b:
-    proxy: http://localhost:8375
+    proxy: http://localhost:4377
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
       --port 4377
@@ -16,7 +16,7 @@ models:
       --draft-p-min 0.6
       -md /home/aicore/llms/models/LGAI-EXAONE_EXAONE-Deep-2.4B-Q8_0.gguf
   exaone-deep-7.8b:
-    proxy: http://localhost:8375
+    proxy: http://localhost:4377
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
       --port 4377
@@ -32,7 +32,7 @@ models:
       --draft-p-min 0.6
       -md /home/aicore/llms/models/LGAI-EXAONE_EXAONE-Deep-2.4B-Q8_0.gguf
   exaone-deep-2.4b:
-    proxy: http://localhost:8375
+    proxy: http://localhost:4377
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
       --port 4377
@@ -43,7 +43,7 @@ models:
       --model /home/aicore/llms/models/LGAI-EXAONE_EXAONE-Deep-2.4B-Q8_0.gguf
       --ctx-size 32768
   phi-4-mini-instruct:
-    proxy: http://localhost:8375
+    proxy: http://localhost:4377
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
       --port 4377
@@ -54,7 +54,7 @@ models:
       --model /home/aicore/llms/models/microsoft_Phi-4-mini-instruct-Q8_0.gguf
       --ctx-size 131072
   olmo-2-0325-32b:
-    proxy: http://localhost:8375
+    proxy: http://localhost:4377
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
       --port 4377
@@ -70,7 +70,7 @@ models:
       --draft-p-min 0.6
       -md /home/aicore/llms/models/OLMo-2-1124-7B-Instruct-IQ4_XS.gguf
   granite-vision-3.2-2b:
-    proxy: http://localhost:8375
+    proxy: http://localhost:4377
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
       --port 4377
@@ -81,7 +81,7 @@ models:
       --model /home/aicore/llms/models/ibm-granite_granite-vision-3.2-2b-Q8_0.gguf
       --ctx-size 131072
   reka-flash-3:
-    proxy: http://localhost:8375
+    proxy: http://localhost:4377
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
       --port 4377
@@ -92,7 +92,7 @@ models:
       --model /home/aicore/llms/models/RekaAI_reka-flash-3-IQ4_XS.gguf
       --ctx-size 32768
   granite-3.2-8b:
-    proxy: http://localhost:8375
+    proxy: http://localhost:4377
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
       --port 4377
@@ -108,7 +108,7 @@ models:
       --draft-p-min 0.6
       -md /home/aicore/llms/models/ibm-granite_granite-3.2-2b-instruct-Q8_0.gguf
   phi-4:
-    proxy: http://localhost:8375
+    proxy: http://localhost:4377
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
       --port 4377
@@ -119,7 +119,7 @@ models:
       --model /home/aicore/llms/models/phi-4-IQ4_XS.gguf
       --ctx-size 16384
   olympiccoder-32b:
-    proxy: http://localhost:8375
+    proxy: http://localhost:4377
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
       --port 4377
@@ -138,7 +138,7 @@ models:
       -md /home/aicore/llms/models/Qwen2.5-Coder-0.5B-Instruct-Q8_0.gguf
       --ctx-size 32768
   llama3.2-reasoning-1b:
-    proxy: http://localhost:8375
+    proxy: http://localhost:4377
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
       --port 4377
@@ -152,7 +152,7 @@ models:
       --top-k 50
       --top-p 0.95
   llama3.1-nemotron-nano-8b:
-    proxy: http://localhost:8375
+    proxy: http://localhost:4377
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
       --port 4377
@@ -171,7 +171,7 @@ models:
       --top-k 50
       --top-p 0.95
   llama3.2-3b:
-    proxy: http://localhost:8375
+    proxy: http://localhost:4377
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
       --port 4377
@@ -187,7 +187,7 @@ models:
       -md /home/aicore/llms/models/Llama-3.2-1B-Instruct-Q8_0.gguf
       --ctx-size 131072
   llama3.2-1b:
-    proxy: http://localhost:8375
+    proxy: http://localhost:4377
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
       --port 4377
@@ -198,7 +198,7 @@ models:
       --model /home/aicore/llms/models/Llama-3.2-1B-Instruct-Q8_0.gguf
       --ctx-size 131072
   mistral-small-24b:
-    proxy: http://localhost:8375
+    proxy: http://localhost:4377
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
       --port 4377
@@ -210,7 +210,7 @@ models:
       --ctx-size 32768
       --temp 0.15
   mistral-small-3.1-24b:
-    proxy: http://localhost:8375
+    proxy: http://localhost:4377
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
       --port 4377
@@ -222,7 +222,7 @@ models:
       --ctx-size 32768
       --temp 0.15
   gemma3-27b:
-    proxy: http://localhost:8375
+    proxy: http://localhost:4377
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
       --port 4377
@@ -238,7 +238,7 @@ models:
       -md /home/aicore/llms/models/google_gemma-3-1b-it-Q8_0.gguf
       --ctx-size 8192
   gemma3-12b:
-    proxy: http://localhost:8375
+    proxy: http://localhost:4377
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
       --port 4377
@@ -254,7 +254,7 @@ models:
       -md /home/aicore/llms/models/google_gemma-3-1b-it-Q8_0.gguf
       --ctx-size 32768
   gemma3-4b:
-    proxy: http://localhost:8375
+    proxy: http://localhost:4377
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
       --port 4377
@@ -265,7 +265,7 @@ models:
       --model /home/aicore/llms/models/google_gemma-3-4b-it-Q8_0.gguf
       --ctx-size 131072
   gemma3-1b:
-    proxy: http://localhost:8375
+    proxy: http://localhost:4377
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
       --port 4377
