@@ -1,4 +1,18 @@
 services:
+  reranker:
+    container_name: reranker
+    image: ghcr.io/huggingface/text-embeddings-inference:latest
+    ports:
+      - 8374:80
+    volumes:
+      - ./models/.cache:/data
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: ["gpu"]
+    command:
+      - "--model-id=BAAI/bge-reranker-v2-m3"
   openai-edge-tts:
     image: travisvn/openai-edge-tts:latest
     container_name: openai-edge-tts

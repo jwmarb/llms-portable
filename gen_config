@@ -198,15 +198,6 @@ models:
       --cache-type-k q8_0
       --cache-type-v q8_0
       --ctx-size 256000
-  bge-reranker-v2-m3:
-    proxy: http://localhost:8374
-    cmd: >
-      ${LLAMA_SERVER}
-      --port 8374
-      --model ${MODELS}/bge-reranker-v2-m3-q8_0.gguf
-      --rerank
-      --ctx-size 8194
-      -ngl 99
   multilingual-e5-large-instruct:
     proxy: http://localhost:8375
     cmd: >
@@ -221,7 +212,6 @@ profiles:
     - "qwen2.5-coder-7b"
     - "multilingual-e5-large-instruct"
     - "readerlm-v2"
-    - "bge-reranker-v2-m3"
 EOF
 
 echo "Detected changes to gen_config"
