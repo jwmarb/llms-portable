@@ -17,3 +17,15 @@ bartowski/open-r1_OlympicCoder-32B-GGUF open-r1_OlympicCoder-32B-IQ3_XXS.gguf
 bartowski/phi-4-GGUF phi-4-IQ4_XS.gguf
 bartowski/ibm-granite_granite-3.2-8b-instruct-GGUF ibm-granite_granite-3.2-8b-instruct-Q4_K_M.gguf
 bartowski/ibm-granite_granite-3.2-2b-instruct-GGUF ibm-granite_granite-3.2-2b-instruct-Q8_0.gguf
+tensorblock/gte-Qwen2-7B-instruct-GGUF gte-Qwen2-7B-instruct-Q4_K_M.gguf
+KeyurRamoliya/multilingual-e5-large-instruct-GGUF multilingual-e5-large-instruct-q8_0.gguf
+bartowski/mistralai_Mistral-Small-3.1-24B-Instruct-2503-GGUF mistralai_Mistral-Small-3.1-24B-Instruct-2503-IQ4_XS.gguf
+bartowski/RekaAI_reka-flash-3-GGUF RekaAI_reka-flash-3-IQ4_XS.gguf
+bartowski/ibm-granite_granite-vision-3.2-2b-GGUF ibm-granite_granite-vision-3.2-2b-Q8_0.gguf
+bartowski/OLMo-2-1124-7B-Instruct-GGUF OLMo-2-1124-7B-Instruct-IQ4_XS.gguf
+mradermacher/OLMo-2-0325-32B-Instruct-i1-GGUF OLMo-2-0325-32B-Instruct.i1-IQ4_XS.gguf
+bartowski/microsoft_Phi-4-mini-instruct-GGUF microsoft_Phi-4-mini-instruct-Q8_0.gguf
+mradermacher/OLMo-2-0325-32B-Instruct-i1-GGUF OLMo-2-0325-32B-Instruct.i1-IQ3_S.gguf
+bartowski/LGAI-EXAONE_EXAONE-Deep-2.4B-GGUF LGAI-EXAONE_EXAONE-Deep-2.4B-Q8_0.gguf
+bartowski/LGAI-EXAONE_EXAONE-Deep-7.8B-GGUF LGAI-EXAONE_EXAONE-Deep-7.8B-Q4_K_M.gguf
+bartowski/LGAI-EXAONE_EXAONE-Deep-32B-GGUF LGAI-EXAONE_EXAONE-Deep-32B-IQ3_XXS.gguf
