@@ -3,7 +3,7 @@ models:
     proxy: http://localhost:8375
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
-      --port 8375
+      --port 4377
       --flash-attn
       --cache-type-k q8_0
       --cache-type-v q8_0
@@ -19,7 +19,7 @@ models:
     proxy: http://localhost:8375
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
-      --port 8375
+      --port 4377
       --flash-attn
       --cache-type-k q8_0
       --cache-type-v q8_0
@@ -35,7 +35,7 @@ models:
     proxy: http://localhost:8375
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
-      --port 8375
+      --port 4377
       --flash-attn
       --cache-type-k q8_0
       --cache-type-v q8_0
@@ -46,7 +46,7 @@ models:
     proxy: http://localhost:8375
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
-      --port 8375
+      --port 4377
       --flash-attn
       --cache-type-k q8_0
       --cache-type-v q8_0
@@ -57,7 +57,7 @@ models:
     proxy: http://localhost:8375
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
-      --port 8375
+      --port 4377
       --flash-attn
       --cache-type-k q8_0
       --cache-type-v q8_0
@@ -73,7 +73,7 @@ models:
     proxy: http://localhost:8375
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
-      --port 8375
+      --port 4377
       --flash-attn
       --cache-type-k q8_0
       --cache-type-v q8_0
@@ -84,7 +84,7 @@ models:
     proxy: http://localhost:8375
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
-      --port 8375
+      --port 4377
       --flash-attn
       --cache-type-k q8_0
       --cache-type-v q8_0
@@ -95,7 +95,7 @@ models:
     proxy: http://localhost:8375
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
-      --port 8375
+      --port 4377
       --flash-attn
       --cache-type-k q8_0
       --cache-type-v q8_0
@@ -111,7 +111,7 @@ models:
     proxy: http://localhost:8375
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
-      --port 8375
+      --port 4377
       --flash-attn
       --cache-type-k q8_0
       --cache-type-v q8_0
@@ -122,7 +122,7 @@ models:
     proxy: http://localhost:8375
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
-      --port 8375
+      --port 4377
       --flash-attn
       --cache-type-k q8_0
       --cache-type-v q8_0
@@ -141,7 +141,7 @@ models:
     proxy: http://localhost:8375
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
-      --port 8375
+      --port 4377
       --flash-attn
       --cache-type-k q8_0
       --cache-type-v q8_0
@@ -155,7 +155,7 @@ models:
     proxy: http://localhost:8375
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
-      --port 8375
+      --port 4377
       --flash-attn
       --cache-type-k q8_0
       --cache-type-v q8_0
@@ -174,7 +174,7 @@ models:
     proxy: http://localhost:8375
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
-      --port 8375
+      --port 4377
       --flash-attn
       --cache-type-k q8_0
       --cache-type-v q8_0
@@ -190,7 +190,7 @@ models:
     proxy: http://localhost:8375
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
-      --port 8375
+      --port 4377
       --flash-attn
       --cache-type-k q8_0
       --cache-type-v q8_0
@@ -201,7 +201,7 @@ models:
     proxy: http://localhost:8375
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
-      --port 8375
+      --port 4377
       --flash-attn
       --cache-type-k q8_0
       --cache-type-v q8_0
@@ -213,7 +213,7 @@ models:
     proxy: http://localhost:8375
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
-      --port 8375
+      --port 4377
       --flash-attn
       --cache-type-k q8_0
       --cache-type-v q8_0
@@ -225,7 +225,7 @@ models:
     proxy: http://localhost:8375
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
-      --port 8375
+      --port 4377
       --flash-attn
       --cache-type-k q8_0
       --cache-type-v q8_0
@@ -241,7 +241,7 @@ models:
     proxy: http://localhost:8375
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
-      --port 8375
+      --port 4377
       --flash-attn
       --cache-type-k q8_0
       --cache-type-v q8_0
@@ -257,7 +257,7 @@ models:
     proxy: http://localhost:8375
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
-      --port 8375
+      --port 4377
       --flash-attn
       --cache-type-k q8_0
       --cache-type-v q8_0
@@ -268,7 +268,7 @@ models:
     proxy: http://localhost:8375
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
-      --port 8375
+      --port 4377
       --flash-attn
       --cache-type-k q8_0
       --cache-type-v q8_0
