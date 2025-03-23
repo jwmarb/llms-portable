@@ -16,6 +16,8 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
+$ROOT/gen_config
+
 while true; do
     # Start the process again
     $ROOT/llama-swap/build/llama-swap-linux-amd64 -config $1 -listen :8080 &
