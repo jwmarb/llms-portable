@@ -208,10 +208,33 @@ models:
       --embeddings
       -ngl 99
       --ctx-size 514
+  multilingual-e5-large:
+    proxy: http://localhost:8376
+    cmd: >
+      ${LLAMA_SERVER}
+      --port 8376
+      --model ${MODELS}/multilingual-e5-large-q8_0.gguf
+      --embeddings
+      -ngl 99
+      --ctx-size 3072
+      --parallel 6
+  multilingual-e5-large-cpu:
+    proxy: http://localhost:8377
+    cmd: >
+      ${LLAMA_SERVER}
+      --port 8377
+      --model ${MODELS}/multilingual-e5-large-q8_0.gguf
+      --embeddings
+      --ctx-size 3072
+      --parallel 6
+      --ubatch-size 3072
+      --prio 2
+      --threads $(nproc)
 profiles:
   coding:
     - "qwen2.5-coder-7b"
-    - "multilingual-e5-large-instruct"
+    - "multilingual-e5-large-cpu"
+    - "multilingual-e5-large"
     - "readerlm-v2"
 EOF
 
