@@ -48,6 +48,11 @@ services:
     ports:
       - 9998:9998
     restart: always
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: ["gpu"]
   searxng:
     container_name: searxng
     image: searxng/searxng:latest
