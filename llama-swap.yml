@@ -321,12 +321,17 @@ models:
     cmd: >
       /home/aicore/llms/llama.cpp/build/bin/llama-server
       --port 8373
-      --model /home/aicore/llms/models/readerlm-v2-q8_0.gguf
+      --model /home/aicore/llms/models/ReaderLM-v2.f16.gguf
       -ngl 99
       --flash-attn
-      --cache-type-k q8_0
-      --cache-type-v q8_0
-      --ctx-size 256000
+      # --cache-type-k q8_0
+      # --cache-type-v q8_0
+      --ctx-size 262144
+      --temp 0.0
+      --top-k 50
+      --repeat-penalty 1.13
+      --presence-penalty 0.25
+      --frequency-penalty 0.25
   multilingual-e5-large-instruct:
     proxy: http://localhost:8375
     cmd: >
@@ -344,8 +349,8 @@ models:
       --model /home/aicore/llms/models/multilingual-e5-large-q8_0.gguf
       --embeddings
       -ngl 99
-      --ctx-size 3072
-      --parallel 6
+      --ctx-size 1024
+      --ubatch-size 512
   multilingual-e5-large-cpu:
     proxy: http://localhost:8377
     cmd: >
