@@ -18,10 +18,10 @@ proxy: http://localhost:8375
 EOF
 )
 DEFAULT=$(cat <<EOF
-proxy: http://localhost:8375
+proxy: http://localhost:4377
     cmd: >
       ${LLAMA_SERVER}
-      --port 8375
+      --port 4377
       --flash-attn
       --cache-type-k q8_0
       --cache-type-v q8_0
@@ -33,7 +33,8 @@ DEFAULT_DRAFT=$(cat <<EOF
       --draft-max 12
       --draft-min 1
       --draft-p-min 0.6
-EOF)
+EOF
+)
 
 cat > $ROOT/llama-swap.yml <<EOF
 models:
@@ -192,21 +193,19 @@ models:
     cmd: >
       ${LLAMA_SERVER}
       --port 8373
-      --model ${MODELS}/readerlm-v2-q8_0.gguf
+      --model ${MODELS}/reader-lm-1.5b-Q8_0.gguf
       -ngl 99
       --flash-attn
       --cache-type-k q8_0
       --cache-type-v q8_0
+      # --ctx-size 262144
       --ctx-size 256000
-  bge-reranker-v2-m3:
-    proxy: http://localhost:8374
-    cmd: >
-      ${LLAMA_SERVER}
-      --port 8374
-      --model ${MODELS}/bge-reranker-v2-m3-q8_0.gguf
-      --rerank
-      --ctx-size 8194
-      -ngl 99
+      --temp 0.0
+      --top-k 50
+      --repeat-penalty 1.13
+      --presence-penalty 0.25
+      --frequency-penalty 0.25
+      --batch-size 32768
   multilingual-e5-large-instruct:
     proxy: http://localhost:8375
     cmd: >
@@ -216,12 +215,34 @@ models:
       --embeddings
       -ngl 99
       --ctx-size 514
+  multilingual-e5-large:
+    proxy: http://localhost:8376
+    cmd: >
+      ${LLAMA_SERVER}
+      --port 8376
+      --model ${MODELS}/multilingual-e5-large-q8_0.gguf
+      --embeddings
+      -ngl 99
+      --ctx-size 1024
+      --ubatch-size 512
+  multilingual-e5-large-cpu:
+    proxy: http://localhost:8377
+    cmd: >
+      ${LLAMA_SERVER}
+      --port 8377
+      --model ${MODELS}/multilingual-e5-large-q8_0.gguf
+      --embeddings
+      --ctx-size 3072
+      --parallel 6
+      --ubatch-size 3072
+      --prio 2
+      --threads $(nproc)
 profiles:
   coding:
     - "qwen2.5-coder-7b"
-    - "multilingual-e5-large-instruct"
+    - "multilingual-e5-large-cpu"
+    - "multilingual-e5-large"
     - "readerlm-v2"
-    - "bge-reranker-v2-m3"
 EOF
 
 echo "Detected changes to gen_config"

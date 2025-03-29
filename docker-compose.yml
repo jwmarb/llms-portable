@@ -1,4 +1,18 @@
 services:
+  reranker:
+    container_name: reranker
+    image: ghcr.io/huggingface/text-embeddings-inference:latest
+    ports:
+      - 8374:80
+    volumes:
+      - ./models/.cache:/data
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: ["gpu"]
+    command:
+      - "--model-id=BAAI/bge-reranker-v2-m3"
   openai-edge-tts:
     image: travisvn/openai-edge-tts:latest
     container_name: openai-edge-tts
@@ -30,10 +44,15 @@ services:
       start_period: 5s
   tika:
     container_name: tika
-    image: apache/tika:latest-full
+    image: apache/tika:latest
     ports:
       - 9998:9998
     restart: always
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: ["gpu"]
   searxng:
     container_name: searxng
     image: searxng/searxng:latest
