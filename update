@@ -3,6 +3,7 @@
 # llama.cpp
 (
   cd llama.cpp && \
+  git checkout master && \
   git reset --hard && \
   git pull && \
   cmake -B build -DGGML_CUDA=ON -DGGML_CUDA_F16=ON -DGGML_CUDA_FA_ALL_QUANTS=ON && \
@@ -12,6 +13,7 @@
 # llama-swap
 (
   cd llama-swap && \
+  git checkout main && \
   git reset --hard && \
   git pull && \
   make clean all -j$(nproc)
