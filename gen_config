@@ -193,17 +193,19 @@ models:
     cmd: >
       ${LLAMA_SERVER}
       --port 8373
-      --model ${MODELS}/ReaderLM-v2.f16.gguf
+      --model ${MODELS}/reader-lm-1.5b-Q8_0.gguf
       -ngl 99
       --flash-attn
-      # --cache-type-k q8_0
-      # --cache-type-v q8_0
-      --ctx-size 262144
+      --cache-type-k q8_0
+      --cache-type-v q8_0
+      # --ctx-size 262144
+      --ctx-size 256000
       --temp 0.0
       --top-k 50
       --repeat-penalty 1.13
       --presence-penalty 0.25
       --frequency-penalty 0.25
+      --batch-size 32768
   multilingual-e5-large-instruct:
     proxy: http://localhost:8375
     cmd: >

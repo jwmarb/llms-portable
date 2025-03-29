@@ -30,3 +30,4 @@ bartowski/LGAI-EXAONE_EXAONE-Deep-7.8B-GGUF LGAI-EXAONE_EXAONE-Deep-7.8B-Q4_K_M.
 bartowski/LGAI-EXAONE_EXAONE-Deep-32B-GGUF LGAI-EXAONE_EXAONE-Deep-32B-IQ3_XXS.gguf
 Zenabius/multilingual-e5-large-Q8_0-GGUF multilingual-e5-large-q8_0.gguf
 mradermacher/ReaderLM-v2-GGUF ReaderLM-v2.f16.gguf
+bartowski/reader-lm-1.5b-GGUF reader-lm-1.5b-Q8_0.gguf
