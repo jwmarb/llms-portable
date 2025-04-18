@@ -12,7 +12,7 @@ MODEL=\$2
 huggingface-cli download \$REPO --local-dir ${PWD}/models --cache-dir ${PWD}/models/.cache --include \$MODEL
 
 if [[ "\$?" = "0" ]]; then
-  echo "${1} ${2}" >> ${PWD}/models.list
+  echo "\${1} \${2}" >> ${PWD}/models.list
 fi
 EOF
 
