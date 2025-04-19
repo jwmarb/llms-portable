@@ -3,8 +3,8 @@
 REPO=$1
 MODEL=$2
 
-huggingface-cli download $REPO --local-dir ~/llms/models --cache-dir ~/llms/models/.cache --include $MODEL
+huggingface-cli download $REPO --local-dir /home/josephmarbella/llms-portable/models --cache-dir /home/josephmarbella/llms-portable/models/.cache --include $MODEL
 
 if [[ "$?" = "0" ]]; then
-  echo "${1} ${2}" >> ~/llms/models.list
+  echo "${1} ${2}" >> /home/josephmarbella/llms-portable/models.list
 fi
