@@ -1,3 +1,5 @@
 models/*
 .venv/
 llama-swap.yml
+scripts/download-llm
+llama-swap.service

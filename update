@@ -5,8 +5,8 @@ sudo systemctl stop llama-swap
 # llama.cpp
 (
   cd llama.cpp && \
-  git checkout master && \
   git reset --hard && \
+  git checkout master && \
   git pull && \
   cmake -B build -DGGML_CUDA=ON -DGGML_CUDA_F16=ON -DGGML_CUDA_FA_ALL_QUANTS=ON && \
   cmake --build build --config Release --parallel $(nproc)
@@ -15,8 +15,8 @@ sudo systemctl stop llama-swap
 # llama-swap
 (
   cd llama-swap && \
-  git checkout main && \
   git reset --hard && \
+  git checkout main && \
   git pull && \
   make clean all -j$(nproc)
 ) &
