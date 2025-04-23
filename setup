@@ -9,7 +9,7 @@ Description=llama-swap
 After=network.target
 
 [Service]
-ExecStart=${PWD}/scripts/llama-swap-start /home/aicore/llms/llama-swap.yml
+ExecStart=${PWD}/scripts/llama-swap-start ${PWD}/llama-swap.yml
 Environment="ROOT=${PWD}"
 Restart=on-failure
 RestartSec=3
