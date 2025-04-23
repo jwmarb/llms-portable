@@ -1,7 +1,23 @@
-#!/bin/bash
+# #!/bin/bash
 git submodule update --init
 
 sudo chmod -R 777 llama-swap llama.cpp models
+
+cat > ./scripts/download-llm <<EOF
+#!/bin/bash
+
+REPO=\$1
+MODEL=\$2
+
+huggingface-cli download \$REPO --local-dir ${PWD}/models --cache-dir ${PWD}/models/.cache --include \$MODEL
+
+if [[ "\$?" = "0" ]]; then
+  echo "\${1} \${2}" >> ${PWD}/models.list
+fi
+EOF
+
+echo "export PATH=${PWD}/scripts:\$PATH" >> ~/.bashrc
+source ~/.bashrc
 
 sudo cat > llama-swap.service <<EOF
 [Unit]
