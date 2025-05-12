@@ -37,6 +37,16 @@ EOF
 )
 
 cat > $ROOT/llama-swap.yml <<EOF
+healthCheckTimeout: 30
+groups:
+  coding:
+    swap: false
+    members:
+      - "qwen2.5-coder-7b"
+      - "multilingual-e5-large-cpu"
+      - "multilingual-e5-large"
+      - "readerlm-v2"
+      - "seed-coder-8b-base"
 models:
   exaone-deep-32b:
     ${DEFAULT}
@@ -242,12 +252,23 @@ models:
       --ubatch-size 3072
       --prio 2
       --threads $(nproc)
-profiles:
-  coding:
-    - "qwen2.5-coder-7b"
-    - "multilingual-e5-large-cpu"
-    - "multilingual-e5-large"
-    - "readerlm-v2"
+  seed-coder-8b-base:
+    proxy: http://localhost:8378
+    cmd: >
+      ${LLAMA_SERVER}
+      --port 8378
+      --model ${MODELS}/Seed-Coder-8B-Base.i1-Q4_K_M.gguf
+      --flash-attn
+      --jinja
+      --cache-type-k q8_0
+      --cache-type-v q8_0
+      -ngl 99
+      --ctx-size 16384
+      --parallel 2
+      --repeat-penalty 1.176
+      --temp 0.7
+      --top-k 20
+      --top-p 0.8
 EOF
 
 echo "Detected changes to gen_config"
