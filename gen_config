@@ -155,6 +155,7 @@ models:
       --model ${MODELS}/Qwen2.5.1-Coder-7B-Instruct-Q4_K_M.gguf
       -md ${MODELS}/Qwen2.5-Coder-0.5B-Instruct-Q8_0.gguf
       --flash-attn
+      --jinja
       --cache-type-k q8_0
       --cache-type-v q8_0
       -ngl 99
@@ -164,6 +165,10 @@ models:
       --draft-p-min 0.6
       --ctx-size 16384
       --parallel 2
+      --repeat-penalty 1.176
+      --temp 0.7
+      --top-k 20
+      --top-p 0.8
   gte-qwen2-1.5b-instruct:
     proxy: http://localhost:8372
     cmd: >

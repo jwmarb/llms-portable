@@ -1,5 +1,6 @@
 services:
   reranker:
+    restart: always
     container_name: reranker
     image: ghcr.io/huggingface/text-embeddings-inference:latest
     ports:
@@ -14,6 +15,7 @@ services:
     command:
       - "--model-id=BAAI/bge-reranker-v2-m3"
   openai-edge-tts:
+    restart: always
     image: travisvn/openai-edge-tts:latest
     container_name: openai-edge-tts
     ports:
